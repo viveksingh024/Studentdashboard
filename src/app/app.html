@@ -1,0 +1,94 @@
+
+<header class="topbar">
+
+ <div class="topbar-inner">
+    <div class="brand">
+      <span class="dot"></span>
+      EduSmart
+    </div>
+    <!-- Removed navigation links -->
+  </div>
+
+</header>
+
+<!-- Left sidebar like YouTube -->
+<aside class="sidebar" aria-label="Primary navigation">
+  <nav class="side-nav">
+    <!-- Parent -->
+    <a
+      class="side-link"
+      routerLink="/portal"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+    >
+      Student Profile
+    </a>
+
+    <!-- Nested Student Portal items (moved from inside the page) -->
+    <div class="side-subnav">
+      <a
+        class="side-sublink"
+        routerLink="/portal/fees"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >Fees</a>
+
+      <a
+        class="side-sublink"
+        routerLink="/portal/subjects"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >Subjects</a>
+
+      <a
+        class="side-sublink"
+        routerLink="/portal/assessments"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >Assessments</a>
+
+      <a
+        class="side-sublink"
+        routerLink="/portal/progress"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >Progress</a>
+    </div>
+
+    <!-- Other primary links -->
+    <a
+      class="side-link"
+      routerLink="/courses"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+    >
+      Courses
+    </a>
+
+    <a
+      class="side-link"
+      routerLink="/exam"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+    >
+      Exam Management
+    </a>
+  </nav>
+</aside>
+
+<main class="layout">
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer class="footer">
+  <span>© EduSmart • Centralized Learning & Assessment</span>
+</footer>

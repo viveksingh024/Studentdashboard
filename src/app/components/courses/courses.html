@@ -1,0 +1,23 @@
+
+<div class="card">
+  <h2>Courses</h2>
+  <p class="muted">Enroll in self-paced or instructor-led courses.</p>
+</div>
+
+<div class="grid grid-2" style="margin-top: 12px;">
+  <div class="card" *ngFor="let c of courses">
+    <h3>{{ c.title }}</h3>
+    <p class="muted">Subject: {{ subjectNameById[c.subjectId] }}</p>
+    <p>
+      <span class="tag">{{ c.mode }}</span>
+      <span class="tag">{{ c.credits }} credits</span>
+    </p>
+
+    <div style="margin-top: 8px;">
+      <a class="btn btn-outline" [routerLink]="['/courses', c.id]">Details</a>
+      <button class="btn btn-primary" (click)="toggleEnroll(c)">
+        {{ c.enrolled ? 'Unenroll' : 'Enroll' }}
+      </button>
+    </div>
+  </div>
+</div>

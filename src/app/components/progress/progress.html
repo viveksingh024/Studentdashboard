@@ -1,0 +1,25 @@
+
+<div class="card">
+  <h2>Progress Dashboard</h2>
+  <p class="muted">Track completed assessments by subject and overall.</p>
+</div>
+
+<div class="grid grid-2" style="margin-top: 12px;">
+  <div class="card" *ngFor="let sp of subjectProgress">
+    <h3>{{ subjectNameById[sp.subjectId] }}</h3>
+    <p class="muted">{{ sp.completedAssessments }} / {{ sp.totalAssessments }} completed</p>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="sp.percentage"></div>
+    </div>
+    <p style="margin-top:6px;">{{ sp.percentage }}%</p>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 12px;">
+  <h3>Overall</h3>
+  <p class="muted">{{ overall?.totalCompleted }} / {{ overall?.totalAssessments }} completed</p>
+  <div class="progress-bar">
+    <div class="progress-fill" [style.width.%]="overall?.overallPercentage || 0"></div>
+  </div>
+  <p style="margin-top:6px;">{{ overall?.overallPercentage }}%</p>
+</div>

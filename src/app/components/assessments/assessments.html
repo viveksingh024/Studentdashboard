@@ -1,0 +1,16 @@
+
+<div class="grid grid-2">
+  <div class="card" *ngFor="let s of subjects">
+    <h3>{{ s.name }}</h3>
+    <ul>
+      <li *ngFor="let a of assessmentsBySubject[s.id]">
+        <strong>{{ a.title }}</strong>
+        <span class="tag">Max {{ a.maxMarks }} marks</span>
+        <span class="tag">{{ a.attempts }} attempt(s)</span>
+        <div style="margin-top:8px;">
+          <a class="btn btn-primary" [routerLink]="['/portal/assessments/quiz', a.id]">Take Assessment</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

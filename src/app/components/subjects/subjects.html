@@ -1,0 +1,22 @@
+
+<div class="grid grid-2">
+  <div class="card" *ngFor="let s of subjects">
+    <h3>{{ s.name }} <span class="tag">{{ s.code }}</span></h3>
+    <p class="muted">Courses available: {{ coursesMap[s.id].length }}</p>
+
+    <ul>
+      <li *ngFor="let c of coursesMap[s.id]">
+        <strong>{{ c.title }}</strong>
+        <span class="tag">{{ c.mode }}</span>
+        <span class="tag" [style.color]="c.enrolled ? 'green' : 'var(--muted)'">
+          {{ c.enrolled ? 'Enrolled' : 'Not enrolled' }}
+        </span>
+        <div style="margin-top: 8px;">
+          <a class="btn btn-outline" [routerLink]="['/courses', c.id]">View Course</a>
+          <a *ngIf="c.enrolled && c.schedule?.length"
+             class="btn btn-primary" [routerLink]="['/virtual-classroom', c.id]">Join Class</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

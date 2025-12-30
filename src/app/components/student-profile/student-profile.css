@@ -1,0 +1,5 @@
+
+/* Keep layout intact but hide inline portal nav because it's now in the left sidebar */
+.portal-inline-nav { display: none; }
+
+.muted { color: var(--muted); }

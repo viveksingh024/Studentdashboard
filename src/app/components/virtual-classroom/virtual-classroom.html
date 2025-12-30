@@ -1,0 +1,17 @@
+
+<div class="card" *ngIf="course">
+  <h2>Virtual Classroom — {{ course.title }}</h2>
+  <p class="muted">Join live sessions and access resources.</p>
+
+  <div *ngIf="course.schedule?.length; else noSchedule">
+    <ul>
+      <li *ngFor="let s of course.schedule">
+        {{ s.day }} • {{ s.time }}
+        <a class="btn btn-primary" [href]="s.link" target="_blank">Join Now</a>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noSchedule>
+    <p class="muted">No live sessions scheduled. Check back later.</p>
+  </ng-template>
+</div>

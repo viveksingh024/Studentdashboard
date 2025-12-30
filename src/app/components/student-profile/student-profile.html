@@ -1,0 +1,18 @@
+
+<div class="card">
+  <h2>Student Profile</h2>
+
+
+  <!-- add 'portal-inline-nav' class to target with CSS -->
+  <div class="quick-nav portal-inline-nav">
+    <a class="btn btn-outline" routerLink="fees" routerLinkActive="btn-primary active" [routerLinkActiveOptions]="{ exact: true }">Fees</a>
+    <a class="btn btn-outline" routerLink="subjects" routerLinkActive="btn-primary active" [routerLinkActiveOptions]="{ exact: true }">Subjects</a>
+    <a class="btn btn-outline" routerLink="assessments" routerLinkActive="btn-primary active" [routerLinkActiveOptions]="{ exact: true }">Assessments</a>
+    <a class="btn btn-outline" routerLink="progress" routerLinkActive="btn-primary active" [routerLinkActiveOptions]="{ exact: true }">Progress</a>
+  </div>
+</div>
+
+<section style="margin-top: 16px;">
+  <router-outlet></router-outlet>
+</section>
+

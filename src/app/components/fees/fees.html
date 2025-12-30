@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+<div class="card">
+  <h2>Fees</h2>
+  <p class="muted">View due/completed fees and make payments.</p>
+
+  <table class="fees-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Amount (₹)</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of fees">
+        <td>{{ f.category | titlecase }}</td>
+        <td>{{ f.name }}</td>
+        <td>{{ f.amount }}</td>
+        <td>{{ f.dueDate || '—' }}</td>
+        <td><span class="tag" [style.color]="statusColor(f)">{{ f.paid ? 'Completed' : 'Due' }}</span></td>
+        <td>
+          <button class="btn btn-primary" (click)="pay(f)" [disabled]="f.paid">Pay</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</thead>
+</table>

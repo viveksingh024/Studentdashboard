@@ -1,0 +1,4 @@
+
+ul { padding-left: var(--space-4); }
+li { display: flex; align-items: center; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+li .btn { margin-left: auto; }
