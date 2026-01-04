@@ -10,6 +10,8 @@ import { AssessmentQuizComponent } from './components/assessment-quiz/assessment
 import { ProgressComponent } from './components/progress/progress';
 import { FeesComponent } from './components/fees/fees';
 import { ExamManagementComponent } from './components/exam-management/exam-management';
+import { LogoutPage } from './components/logout-page/logout-page'; 
+import { Login } from './components/login/login';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'portal', pathMatch: 'full' },
@@ -20,6 +22,8 @@ export const routes: Routes = [
     { path: 'assessments/quiz/:id', component: AssessmentQuizComponent },
     { path: 'progress', component: ProgressComponent },
     { path: 'fees', component: FeesComponent },
+    {path : 'come-soon', component:LogoutPage},
+    {path: 'login', component:Login}
   ]},
   { path: 'courses', component: CoursesComponent },
   { path: 'courses/:id', component: CourseDetailComponent },

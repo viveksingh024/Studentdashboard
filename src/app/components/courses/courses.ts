@@ -17,6 +17,8 @@ export class CoursesComponent {
   courses: Course[] = [];
   subjectNameById: Record<string, string> = {};
 
+  searchTerm: string = '';
+
   constructor(private data: DataService) {
     this.subjects = data.getSubjects();
     this.subjectNameById = this.subjects.reduce((acc, s) => {
@@ -26,6 +28,24 @@ export class CoursesComponent {
 
     this.refreshCourses();
   }
+
+  ngOnInit(): void {}
+
+  get filteredCourses(): Course[] {
+    const term = this.searchTerm.toLowerCase().trim();
+
+    if (!term) {
+      return this.courses;
+    }
+    return this.courses.filter((course: Course)=>course.title.toLowerCase().includes(term)
+
+    );
+  }
+  updateSearch(event: Event): void {
+    const element = event.target as HTMLInputElement;
+    this.searchTerm = element.value;
+  }
+ 
 
   toggleEnroll(course: Course) {
     this.data.toggleEnroll(course.id, !course.enrolled);

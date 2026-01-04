@@ -1,0 +1,44 @@
+.logout-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface); /* */
+  text-align: center;
+
+}
+
+.brand-large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 2.5rem; 
+  font-weight: 800;
+  color: var(--primary-700);
+  margin-bottom: 20px;
+
+}
+
+.dot-large {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-600), var(--accent)); /* */
+
+}
+
+h1 { color: #1e293b; margin-bottom: 10px; }
+.message { color: #64748b; margin-bottom: 30px; }
+
+.btn-primary {
+  background-color: var(--primary-600);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+
+}
+ 
