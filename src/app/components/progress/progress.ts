@@ -11,7 +11,7 @@ import { SubjectProgress, OverallProgress, Subject } from '../../shared/models';
   templateUrl: './progress.html',
   styleUrls: ['./progress.css']
 })
-export class ProgressComponent {
+export class Progress {
   subjects: Subject[] = [];
   subjectNameById: Record<string, string> = {};
   subjectProgress: SubjectProgress[] = [];
